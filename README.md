@@ -1,2 +1,5 @@
 - docker build -t rest-apis-flask-python
 - docker run -d -p 5000:5000 rest-apis-flask-python
+- docker compose:
+  - docker compose up
+  - docker compose up --build --force-recreate --no-deps web
