@@ -1,16 +1,18 @@
 import uuid
 
 from flask import Flask, request
-from flask_smorest import abort
+from flask_smorest import Blueprint, abort
 
 from db import items, stores
+
+blp = Blueprint("stores", __name__, description="Operations on stores")
 
 app = Flask(__name__)
 
 
 @app.get("/store")
 def get_stores():
-    return {"stores": list(stores.values)}
+    return {"stores": list(stores.values())}
 
 
 @app.post("/store")
