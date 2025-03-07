@@ -17,7 +17,7 @@ class PlainStoreSchema(Schema):
     name = fields.Str(required=True)
 
 
-class ItemSchema(Schema):
+class ItemSchema(PlainItemSchema):
     store_id = fields.Int(
         required=True, load_only=True
     )  # Only data from the client(whoever call the api, json) will be passed in the store_id
@@ -27,5 +27,5 @@ class ItemSchema(Schema):
     )
 
 
-class StoreSchema(Schema):
+class StoreSchema(PlainStoreSchema):
     items = fields.List(fields.Nested(PlainItemSchema(), dump_only=True))
