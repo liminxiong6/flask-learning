@@ -9,5 +9,7 @@ class ItemModel(db.Model):
     price = db.Column(db.Float(precision=2), unique=False, nullable=False)
     store_id = db.Column(
         db.Integer, db.ForeignKey("stores.id"), unique=False, nullable=False
-    )
-    store = db.relationship("StoreModel", back_populates="items")
+    )  # Foreign Key in stores table
+    store = db.relationship(
+        "StoreModel", back_populates="items"
+    )  # back_populates allow StoreModel to see all items associated with it
