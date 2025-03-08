@@ -50,3 +50,9 @@ class TagAndItemSchema(Schema):
     message = fields.Str()
     item = fields.Nested(ItemSchema)
     tag = fields.Nested(TagSchema)
+
+
+class UserSchame(Schema):
+    id = fields.Int(dump_only=True)
+    name = fields.Str(required=True)
+    password = fields.Str(required=True, load_only=True)
