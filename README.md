@@ -13,3 +13,5 @@
 - What is Flask-SQLAlchemy?
   - SQLAlchemy is the ORM library, that helps map Python classes to database tables and columns, and turns Python objects of those classes into specific rows.
   - Flask-SQLAlchemy is a Flask extension which helps connect SQLAlchemy to Flask apps.
+- What is Flask-Migrate:
+  - Flask-Migrate is a Flask extension built on top of Alembic and SQLAlchemy. It simplifies the integration and use of Alembic within a Flask application by providing easy-to-use commands through Flask CLI.
