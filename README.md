@@ -15,3 +15,21 @@
   - Flask-SQLAlchemy is a Flask extension which helps connect SQLAlchemy to Flask apps.
 - What is Flask-Migrate:
   - Flask-Migrate is a Flask extension built on top of Alembic and SQLAlchemy. It simplifies the integration and use of Alembic within a Flask application by providing easy-to-use commands through Flask CLI.
+- Initialize the database with Flask-Migrate
+
+  - Activate your virtual environment and run this command: flask db init (This will create a migrations folder inside your project folder.)
+  - Generate the first migration to set up the database:
+
+    This will create the migration file.
+
+    ```
+    flask db migrate
+    ```
+
+    Now let's actually apply the migration:
+
+    ```
+    flask db upgrade
+    ```
+
+    This will create the data.db file. If you were using another RDBMS (like PostgreSQL or MySQL), this command would create the tables using the existing model definitions.
